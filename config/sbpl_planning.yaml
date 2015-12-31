@@ -49,8 +49,6 @@
 #         plannern_param1: value
 #     ...
 
-check_torques: true
-
 right_arm:
     ### Available Search Parameters ###
     planner_configs:
