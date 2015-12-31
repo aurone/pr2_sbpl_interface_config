@@ -1,0 +1,36 @@
+<launch>
+    <arg name="planning_plugin" value="sbpl_interface/SBPLPlanner" />
+
+    <!--
+    <arg name="planning_adapters"
+            value="default_planner_request_adapters/AddTimeParameterization
+                    default_planner_request_adapters/FixWorkspaceBounds
+                    default_planner_request_adapters/FixStartStateBounds
+                    default_planner_request_adapters/FixStartStateCollision
+                    default_planner_request_adapters/FixStartStatePathConstraints" />
+    -->
+
+    <arg name="planning_adapters" value=""/>
+
+    <param name="planning_plugin" value="$(arg planning_plugin)" />
+    <param name="request_adapters" value="$(arg planning_adapters)" />
+    <param name="start_state_max_bounds_error" value="0.1" />
+
+    <rosparam command="load" file="$(find pr2_moveit_config)/config/kinematics.yaml"/>
+    <rosparam command="load" file="$(find pr2_sbpl_interface_config)/config/sbpl_planning.yaml"/>
+
+    <group ns="right_arm">
+        <param name="mprim_filename" value="$(find pr2_sbpl_interface_config)/config/pr2.mprim"/>
+    </group>
+    <group ns="left_arm">
+        <param name="mprim_filename" value="$(find pr2_sbpl_interface_config)/config/pr2.mprim"/>
+    </group>
+
+    <group ns="right_arm_and_torso">
+        <param name="mprim_filename" value="$(find pr2_sbpl_interface_config)/config/pr2_with_torso.mprim"/>
+    </group>
+
+    <group ns="left_arm_and_torso">
+        <param name="mprim_filename" value="$(find pr2_sbpl_interface_config)/config/pr2_with_torso.mprim"/>
+    </group>
+</launch>

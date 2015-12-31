@@ -1,0 +1,30 @@
+<launch>
+    <arg name="db" default="false"/>
+    <arg name="debug" default="false"/>
+
+    <!-- load urdf, srdf, joint limits, and kinematics -->
+    <include file="$(find pr2_moveit_config)/launch/planning_context.launch">
+        <arg name="load_robot_description" value="true"/>
+    </include>
+
+    <!-- NOTE: removed: -->
+    <!--     virtual_joint_broadcaster from odom_combined to base_footprint -->
+    <!--     joint_state_publisher -->
+    <!--     robot_state_publisher -->
+    <!-- and replaced with pr2.launch -->
+
+    <include file="$(find pr2_moveit_config)/launch/move_group.launch">
+        <arg name="allow_trajectory_execution" value="true"/>
+        <arg name="fake_execution" value="true"/>
+        <arg name="info" value="true"/>
+        <arg name="debug" value="$(arg debug)"/>
+    </include>
+
+    <include file="$(find pr2_moveit_config)/launch/moveit_rviz.launch">
+        <arg name="config" value="true"/>
+        <arg name="debug" value="$(arg debug)"/>
+    </include>
+
+    <include if="$(arg db)"
+            file="$(find pr2_moveit_config)/launch/default_warehouse_db.launch"/>
+</launch>
