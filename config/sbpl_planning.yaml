@@ -83,6 +83,7 @@ right_arm:
     xyzrpy_snap_dist_thresh: 0.2
     short_dist_mprims_thresh: 0.4
     shortcut_path: true
+    shortcut_type: joint_space
     interpolate_path: true
 
 right_arm_and_torso:
@@ -109,6 +110,7 @@ right_arm_and_torso:
     xyzrpy_snap_dist_thresh: 0.2
     short_dist_mprims_thresh: 0.4
     shortcut_path: true
+    shortcut_type: joint_space
     interpolate_path: true
 
 left_arm:
@@ -134,6 +136,7 @@ left_arm:
     xyzrpy_snap_dist_thresh: 0.2
     short_dist_mprims_thresh: 0.4
     shortcut_path: true
+    shortcut_type: joint_space
     interpolate_path: true
 
 left_arm_and_torso:
@@ -160,6 +163,7 @@ left_arm_and_torso:
     xyzrpy_snap_dist_thresh: 0.2
     short_dist_mprims_thresh: 0.4
     shortcut_path: true
+    shortcut_type: joint_space
     interpolate_path: true
 
 planner_configs:
