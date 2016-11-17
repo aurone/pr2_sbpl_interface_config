@@ -1,159 +1,129 @@
-## the planner configurations; each config must have a type, which specifies
-## the planner to be used; other parameters can be specified as well, depending
-## on the planner
-
-# The general configuration format for a joint group is as follows:
-
-# <group_name>:
-#     planner_configs:
-#         - Planner1Config
-#         - Planner2Config
-#         - ...
-#         - PlannerNConfig
-#     use_sbpl_collision_checking: [true|false]
-#     discretization:
-#          joint1_name: discretization resolution
-#          joint2_name: discretization resolution
-#          ...
-#          joint1_name: discretization resolution
-#     mprim_filename: string
-#         # path to the file describing long and short range motion primitives
-#     use_xyz_snap_mprim: bool
-#         # whether to use motions computed via interpolating from the current
-#         # state to an arm pose computed via 3-dof ik to the goal position
-#     use_rpy_snap_mprim: bool
-#         # whether to use motions computed via interpolating from the current
-#         # state to an arm pose computed via 3-dof ik to the goal orientation
-#     use_xyzrpy_snap_mprim: bool
-#         # whether to use motions computed via interpolating from the current
-#         # state to an arm pose computed via 6-dof ik to the goal pose
-#     use_short_dist_mprims: bool
-#         # whether to use short distance motion primitives
-#     xyz_snap_dist_thresh: double
-#     rpy_snap_dist_thresh: double
-#     xyzrpy_snap_dist_thresh: double
-#         # the distance from the goal at which to start using ik motion
-#         # primitives
-#     short_dist_mprims_thresh: double
-#         # the distance from the goal at which to start using short distance
-#         # motion primitves
-#     shortcut_path: bool
-#         # whether to apply a shortcutter to the discrete path to smooth the
-#         # final trajectory
-#
-# planner_configs:
-#     Planner1Config:
-#         planner1_param1: value
-#         planner2_param1: value
-#         ...
-#         plannern_param1: value
-#     ...
-
 right_arm:
-    ### Available Search Parameters ###
-    planner_configs:
-        - ARAConfigDefault
-        - LARAConfigDefault
-        - MHAConfigDefault
-
-    ### Collision Checking Parameters ###
-    use_sbpl_collision_checking: true
-
-    ### Graph Parameters ###
-
-    # angular resolution of each active joint variable
-    discretization:
-        r_shoulder_pan_joint:   0.017453292519943
-        r_shoulder_lift_joint:  0.017453292519943
-        r_upper_arm_roll_joint: 0.017453292519943
-        r_forearm_roll_joint:   0.017453292519943
-        r_elbow_flex_joint:     0.017453292519943
-        r_wrist_flex_joint:     0.017453292519943
-        r_wrist_roll_joint:     0.017453292519943
-
-    ### Action Parameters ###
-
-    # mprim_filename: uploaded via roslaunch
-    use_xyz_snap_mprim: false
-    use_rpy_snap_mprim: true
-    use_xyzrpy_snap_mprim: true
-    use_short_dist_mprims: true
-    xyz_snap_dist_thresh: 0.0
-    rpy_snap_dist_thresh: 0.04
-    xyzrpy_snap_dist_thresh: 0.2
-    short_dist_mprims_thresh: 0.4
-    shortcut_path: true
-    shortcut_type: joint_space
-    interpolate_path: true
-
-right_arm_and_torso:
-    planner_configs:
-        - ARAConfigDefault
-        - LARAConfigDefault
-        - MHAConfigDefault
-    use_sbpl_collision_checking: true
-    discretization:
-        torso_lift_joint:       0.02
-        r_shoulder_pan_joint:   0.017453292519943
-        r_shoulder_lift_joint:  0.017453292519943
-        r_upper_arm_roll_joint: 0.017453292519943
-        r_forearm_roll_joint:   0.017453292519943
-        r_elbow_flex_joint:     0.017453292519943
-        r_wrist_flex_joint:     0.017453292519943
-        r_wrist_roll_joint:     0.017453292519943
-    use_xyz_snap_mprim: false
-    use_rpy_snap_mprim: true
-    use_xyzrpy_snap_mprim: true
-    use_short_dist_mprims: true
-    xyz_snap_dist_thresh: 0.0
-    rpy_snap_dist_thresh: 0.04
-    xyzrpy_snap_dist_thresh: 0.2
-    short_dist_mprims_thresh: 0.4
-    shortcut_path: true
-    shortcut_type: joint_space
-    interpolate_path: true
+  planner_configs:
+    - name: arastar.bfs.manip
+      search_config: ARAConfigDefault
+      heuristic_config: BFSConfigDefault
+      graph_config: RightArmManipLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
+    - name: larastar.bfs.manip
+      search_config: ARAConfigDefault
+      heuristic_config: BFSConfigDefault
+      graph_config: RightArmManipLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
+    - name: mhastar.bfs.manip
+      search_config: ARAConfigDefault
+      heuristic_config: BFSConfigDefault
+      graph_config: RightArmManipLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
 
 left_arm:
-    planner_configs:
-        - ARAConfigDefault
-        - LARAConfigDefault
-        - MHAConfigDefault
-    use_sbpl_collision_checking: true
-    discretization:
-        l_shoulder_pan_joint:   0.017453292519943
-        l_shoulder_lift_joint:  0.017453292519943
-        l_upper_arm_roll_joint: 0.017453292519943
-        l_forearm_roll_joint:   0.017453292519943
-        l_elbow_flex_joint:     0.017453292519943
-        l_wrist_flex_joint:     0.017453292519943
-        l_wrist_roll_joint:     0.017453292519943
-    use_xyz_snap_mprim: false
-    use_rpy_snap_mprim: true
-    use_xyzrpy_snap_mprim: true
-    use_short_dist_mprims: true
-    xyz_snap_dist_thresh: 0.0
-    rpy_snap_dist_thresh: 0.04
-    xyzrpy_snap_dist_thresh: 0.2
-    short_dist_mprims_thresh: 0.4
-    shortcut_path: true
-    shortcut_type: joint_space
-    interpolate_path: true
+  planner_configs:
+    - name: arastar.bfs.manip
+      search_config: ARAConfigDefault
+      heuristic_config: BFSConfigDefault
+      graph_config: LeftArmManipLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
+    - name: larastar.bfs.manip
+      search_config: ARAConfigDefault
+      heuristic_config: BFSConfigDefault
+      graph_config: LeftArmManipLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
+    - name: mhastar.bfs.manip
+      search_config: ARAConfigDefault
+      heuristic_config: BFSConfigDefault
+      graph_config: LeftArmManipLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
+
+right_arm_and_torso:
+  planner_configs:
+    - name: arastar.bfs.manip
+      search_config: ARAConfigDefault
+      heuristic_config: BFSConfigDefault
+      graph_config: RightArmAndTorsoManipLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
+    - name: larastar.bfs.manip
+      search_config: ARAConfigDefault
+      heuristic_config: BFSConfigDefault
+      graph_config: RightArmAndTorsoManipLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
+    - name: mhastar.bfs.manip
+      search_config: ARAConfigDefault
+      heuristic_config: BFSConfigDefault
+      graph_config: RightArmAndTorsoManipLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
 
 left_arm_and_torso:
-    planner_configs:
-        - ARAConfigDefault
-        - LARAConfigDefault
-        - MHAConfigDefault
-    use_sbpl_collision_checking: true
+  planner_configs:
+    - name: arastar.bfs.manip
+      search_config: ARAConfigDefault
+      heuristic_config: BFSConfigDefault
+      graph_config: LeftArmAndTorsoManipLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
+    - name: larastar.bfs.manip
+      search_config: ARAConfigDefault
+      heuristic_config: BFSConfigDefault
+      graph_config: LeftArmAndTorsoManipLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
+    - name: mhastar.bfs.manip
+      search_config: ARAConfigDefault
+      heuristic_config: BFSConfigDefault
+      graph_config: LeftArmAndTorsoManipLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
+
+arms:
+  planner_configs: []
+
+base:
+  planner_configs: []
+
+head:
+  planner_configs: []
+
+left_gripper:
+  planner_configs: []
+
+right_gripper:
+  planner_configs: []
+
+torso:
+  planner_configs: []
+
+whole_body:
+  planner_configs: []
+
+search_configs:
+  ARAConfigDefault:
+    search: arastar
+    epsilon: 100.0
+  LARAConfigDefault:
+    search: larastar
+    epsilon: 100.0
+  MHAConfigDefault:
+    search: mhastar
+    epsilon: 10.0
+    mha_epsilon: 10.0
+
+heuristic_configs:
+  BFSConfigDefault:
+    heuristic: bfs
+    bfs_res_x: 0.015
+    bfs_res_y: 0.015
+    bfs_res_z: 0.015
+    bfs_sphere_radius: 0.02
+  JointDistConfigDefault:
+    heuristic: joint_distance
+
+graph_configs:
+  RightArmManipLatticeConfigDefault:
+    graph: manip
     discretization:
-        torso_lift_joint:       0.02
-        l_shoulder_pan_joint:   0.017453292519943
-        l_shoulder_lift_joint:  0.017453292519943
-        l_upper_arm_roll_joint: 0.017453292519943
-        l_forearm_roll_joint:   0.017453292519943
-        l_elbow_flex_joint:     0.017453292519943
-        l_wrist_flex_joint:     0.017453292519943
-        l_wrist_roll_joint:     0.017453292519943
+      r_shoulder_pan_joint:   0.017453292519943
+      r_shoulder_lift_joint:  0.017453292519943
+      r_upper_arm_roll_joint: 0.017453292519943
+      r_forearm_roll_joint:   0.017453292519943
+      r_elbow_flex_joint:     0.017453292519943
+      r_wrist_flex_joint:     0.017453292519943
+      r_wrist_roll_joint:     0.017453292519943
     use_xyz_snap_mprim: false
     use_rpy_snap_mprim: true
     use_xyzrpy_snap_mprim: true
@@ -162,33 +132,65 @@ left_arm_and_torso:
     rpy_snap_dist_thresh: 0.04
     xyzrpy_snap_dist_thresh: 0.2
     short_dist_mprims_thresh: 0.4
-    shortcut_path: true
-    shortcut_type: joint_space
-    interpolate_path: true
+  RightArmAndTorsoManipLatticeConfigDefault:
+    graph: manip
+    discretization:
+      torso_lift_joint:       0.02
+      r_shoulder_pan_joint:   0.017453292519943
+      r_shoulder_lift_joint:  0.017453292519943
+      r_upper_arm_roll_joint: 0.017453292519943
+      r_forearm_roll_joint:   0.017453292519943
+      r_elbow_flex_joint:     0.017453292519943
+      r_wrist_flex_joint:     0.017453292519943
+      r_wrist_roll_joint:     0.017453292519943
+    use_xyz_snap_mprim: false
+    use_rpy_snap_mprim: true
+    use_xyzrpy_snap_mprim: true
+    use_short_dist_mprims: true
+    xyz_snap_dist_thresh: 0.0
+    rpy_snap_dist_thresh: 0.04
+    xyzrpy_snap_dist_thresh: 0.2
+    short_dist_mprims_thresh: 0.4
+  LeftArmManipLatticeConfigDefault:
+    graph: manip
+    discretization:
+      l_shoulder_pan_joint:   0.017453292519943
+      l_shoulder_lift_joint:  0.017453292519943
+      l_upper_arm_roll_joint: 0.017453292519943
+      l_forearm_roll_joint:   0.017453292519943
+      l_elbow_flex_joint:     0.017453292519943
+      l_wrist_flex_joint:     0.017453292519943
+      l_wrist_roll_joint:     0.017453292519943
+    use_xyz_snap_mprim: false
+    use_rpy_snap_mprim: true
+    use_xyzrpy_snap_mprim: true
+    use_short_dist_mprims: true
+    xyz_snap_dist_thresh: 0.0
+    rpy_snap_dist_thresh: 0.04
+    xyzrpy_snap_dist_thresh: 0.2
+    short_dist_mprims_thresh: 0.4
+  LeftArmAndTorsoManipLatticeConfigDefault:
+    graph: manip
+    discretization:
+      torso_lift_joint:       0.02
+      l_shoulder_pan_joint:   0.017453292519943
+      l_shoulder_lift_joint:  0.017453292519943
+      l_upper_arm_roll_joint: 0.017453292519943
+      l_forearm_roll_joint:   0.017453292519943
+      l_elbow_flex_joint:     0.017453292519943
+      l_wrist_flex_joint:     0.017453292519943
+      l_wrist_roll_joint:     0.017453292519943
+    use_xyz_snap_mprim: false
+    use_rpy_snap_mprim: true
+    use_xyzrpy_snap_mprim: true
+    use_short_dist_mprims: true
+    xyz_snap_dist_thresh: 0.0
+    rpy_snap_dist_thresh: 0.04
+    xyzrpy_snap_dist_thresh: 0.2
+    short_dist_mprims_thresh: 0.4
 
-planner_configs:
-    ARAConfigDefault:
-        type: ARA*
-        epsilon: 100.0
-        use_bfs_heuristic: true
-        bfs_res_x: 0.02
-        bfs_res_y: 0.02
-        bfs_res_z: 0.02
-        bfs_sphere_radius: 0.02
-    LARAConfigDefault:
-        type: LARA*
-        epsilon: 100.0
-        use_bfs_heuristic: true
-        bfs_res_x: 0.02
-        bfs_res_y: 0.02
-        bfs_res_z: 0.02
-        bfs_sphere_radius: 0.02
-    MHAConfigDefault:
-        type: MHA*
-        epsilon: 100.0
-        mha_epsilon: 2.0
-        use_bfs_heuristic: true
-        bfs_res_x: 0.02
-        bfs_res_y: 0.02
-        bfs_res_z: 0.02
-        bfs_sphere_radius: 0.02
+shortcut_configs:
+  JointSpaceShortcutConfigDefault:
+    shortcutter: joint_space
+    shortcut_path: true
+    interpolate_path: true
