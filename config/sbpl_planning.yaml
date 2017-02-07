@@ -1,16 +1,16 @@
 right_arm:
   planner_configs:
-    - name: arastar.bfs.manip
+    arastar_bfs_manip:
       search_config: ARAConfigDefault
       heuristic_config: BFSConfigDefault
       graph_config: RightArmManipLatticeConfigDefault
       shortcut_config: JointSpaceShortcutConfigDefault
-    - name: larastar.bfs.manip
+    larastar_bfs_manip:
       search_config: ARAConfigDefault
       heuristic_config: BFSConfigDefault
       graph_config: RightArmManipLatticeConfigDefault
       shortcut_config: JointSpaceShortcutConfigDefault
-    - name: mhastar.bfs.manip
+    mhastar_bfs_manip:
       search_config: ARAConfigDefault
       heuristic_config: BFSConfigDefault
       graph_config: RightArmManipLatticeConfigDefault
@@ -18,17 +18,17 @@ right_arm:
 
 left_arm:
   planner_configs:
-    - name: arastar.bfs.manip
+    arastar_bfs_manip:
       search_config: ARAConfigDefault
       heuristic_config: BFSConfigDefault
       graph_config: LeftArmManipLatticeConfigDefault
       shortcut_config: JointSpaceShortcutConfigDefault
-    - name: larastar.bfs.manip
+    larastar_bfs_manip:
       search_config: ARAConfigDefault
       heuristic_config: BFSConfigDefault
       graph_config: LeftArmManipLatticeConfigDefault
       shortcut_config: JointSpaceShortcutConfigDefault
-    - name: mhastar.bfs.manip
+    mhastar_bfs_manip:
       search_config: ARAConfigDefault
       heuristic_config: BFSConfigDefault
       graph_config: LeftArmManipLatticeConfigDefault
@@ -36,17 +36,17 @@ left_arm:
 
 right_arm_and_torso:
   planner_configs:
-    - name: arastar.bfs.manip
+    arastar_bfs_manip:
       search_config: ARAConfigDefault
       heuristic_config: BFSConfigDefault
       graph_config: RightArmAndTorsoManipLatticeConfigDefault
       shortcut_config: JointSpaceShortcutConfigDefault
-    - name: larastar.bfs.manip
+    larastar_bfs_manip:
       search_config: ARAConfigDefault
       heuristic_config: BFSConfigDefault
       graph_config: RightArmAndTorsoManipLatticeConfigDefault
       shortcut_config: JointSpaceShortcutConfigDefault
-    - name: mhastar.bfs.manip
+    mhastar_bfs_manip:
       search_config: ARAConfigDefault
       heuristic_config: BFSConfigDefault
       graph_config: RightArmAndTorsoManipLatticeConfigDefault
@@ -54,42 +54,42 @@ right_arm_and_torso:
 
 left_arm_and_torso:
   planner_configs:
-    - name: arastar.bfs.manip
+    arastar_bfs_manip:
       search_config: ARAConfigDefault
       heuristic_config: BFSConfigDefault
       graph_config: LeftArmAndTorsoManipLatticeConfigDefault
       shortcut_config: JointSpaceShortcutConfigDefault
-    - name: larastar.bfs.manip
+    larastar_bfs_manip:
       search_config: ARAConfigDefault
       heuristic_config: BFSConfigDefault
       graph_config: LeftArmAndTorsoManipLatticeConfigDefault
       shortcut_config: JointSpaceShortcutConfigDefault
-    - name: mhastar.bfs.manip
+    mhastar_bfs_manip:
       search_config: ARAConfigDefault
       heuristic_config: BFSConfigDefault
       graph_config: LeftArmAndTorsoManipLatticeConfigDefault
       shortcut_config: JointSpaceShortcutConfigDefault
 
-arms:
-  planner_configs: []
-
-base:
-  planner_configs: []
-
-head:
-  planner_configs: []
-
-left_gripper:
-  planner_configs: []
-
-right_gripper:
-  planner_configs: []
-
-torso:
-  planner_configs: []
-
-whole_body:
-  planner_configs: []
+#arms:
+#  planner_configs: {}
+#
+#base:
+#  planner_configs: {}
+#
+#head:
+#  planner_configs: {}
+#
+#left_gripper:
+#  planner_configs: {}
+#
+#right_gripper:
+#  planner_configs: {}
+#
+#torso:
+#  planner_configs: {}
+#
+#whole_body:
+#  planner_configs: {}
 
 search_configs:
   ARAConfigDefault:
