@@ -21,6 +21,7 @@
 
     <!-- Planning (modified from original move_group.launch) -->
     <include ns="move_group" file="$(find pr2_sbpl_interface_config)/launch/sbpl_planning_pipeline.launch.xml"/>
+<!--    <include ns="move_group" file="$(find pr2_sbpl_interface_config)/launch/planner_family_planning_pipeline.launch.xml"/> -->
 
     <!-- Action -->
     <include if="$(arg allow_trajectory_execution)"

@@ -1,5 +1,9 @@
 <launch>
-    <arg name="planning_plugin" value="sbpl_interface/SBPLPlanner" />
+    <arg name="planning_plugin" value="sbpl_interface/PlannerFamily" />
+    <rosparam param="planner_plugins">
+        sbpl: sbpl_interface/SBPLPlanner
+        ompl: ompl_interface/OMPLPlanner
+    </rosparam>
 
     <!--
     <arg name="planning_adapters"
@@ -18,5 +22,10 @@
 
     <rosparam command="load" file="$(find pr2_moveit_config)/config/kinematics.yaml"/>
 
-    <include file="$(find pr2_sbpl_interface_config)/launch/sbpl_planning.launch.xml"/>
+    <group ns="sbpl">
+        <include file="$(find pr2_sbpl_interface_config)/launch/sbpl_planning.launch.xml"/>
+    </group>
+    <group ns="ompl">
+        <rosparam command="load" file="$(find pr2_moveit_config)/config/ompl_planning.yaml"/>
+    </group>
 </launch>
