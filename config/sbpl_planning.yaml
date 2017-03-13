@@ -15,7 +15,26 @@ right_arm:
       heuristic_config: BFSConfigDefault
       graph_config: RightArmManipLatticeConfigDefault
       shortcut_config: JointSpaceShortcutConfigDefault
-
+    arastar_bfs_workspace:
+      search_config: ARAConfigDefault
+      heuristic_config: BFSConfigDefault
+      graph_config: RightArmWorkspaceLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
+    arastar_euclid_workspace:
+      search_config: ARAConfigDefault
+      heuristic_config: EuclidDistConfigDefault
+      graph_config: RightArmWorkspaceLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
+    larastar_euclid_workspace:
+      search_config: LARAConfigDefault
+      heuristic_config: EuclidDistConfigDefault
+      graph_config: RightArmWorkspaceLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
+    adaptive_planner:
+      search_config: AdaptivePlannerConfigDefault
+      heuristic_config: BFSConfigDefault
+      graph_config: RightArmAdaptiveWorkspaceLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
 left_arm:
   planner_configs:
     arastar_bfs_manip:
@@ -102,6 +121,10 @@ search_configs:
     search: mhastar
     epsilon: 10.0
     mha_epsilon: 10.0
+  AdaptivePlannerConfigDefault:
+    search: padastar
+    epsilon_plan: 100.0
+    epsilon_track: 100.0
 
 heuristic_configs:
   BFSConfigDefault:
@@ -110,6 +133,8 @@ heuristic_configs:
     bfs_res_y: 0.015
     bfs_res_z: 0.015
     bfs_sphere_radius: 0.02
+  EuclidDistConfigDefault:
+    heuristic: euclid
   JointDistConfigDefault:
     heuristic: joint_distance
 
@@ -132,6 +157,10 @@ graph_configs:
     rpy_snap_dist_thresh: 0.04
     xyzrpy_snap_dist_thresh: 0.2
     short_dist_mprims_thresh: 0.4
+  RightArmWorkspaceLatticeConfigDefault:
+    graph: workspace
+  RightArmAdaptiveWorkspaceLatticeConfigDefault:
+    graph: adaptive_workspace_lattice
   RightArmAndTorsoManipLatticeConfigDefault:
     graph: manip
     discretization:
