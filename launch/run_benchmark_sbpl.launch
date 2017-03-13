@@ -1,0 +1,33 @@
+<launch>
+   <!-- Standard Debug Arguments -->
+    <arg name="debug" default="false"/>
+    <arg unless="$(arg debug)" name="launch_prefix" value=""/>
+    <arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args"/>
+
+    <!-- This argument must specify the list of .cfg files to process for benchmarking -->
+    <arg name="cfg"/>
+
+    <!-- Load URDF -->
+    <include file="$(find pr2_moveit_config)/launch/planning_context.launch">
+        <arg name="load_robot_description" value="true"/>
+    </include>
+
+    <!-- Start the database -->
+    <include file="$(find pr2_moveit_config)/launch/warehouse.launch">
+        <arg name="moveit_warehouse_database_path" value="moveit_sbpl_benchmark_warehouse"/>
+    </include>
+
+    <!-- NOTE: difference between ompl and sbpl setups here: ompl loads these
+    parameters into the benchmark node's namespace and forces the planner
+    plugin's namespace to be private when left unspecified, as the benchmark
+    node will not initialize the planner with its namespace
+    -->
+    <include file="$(find pr2_sbpl_interface_config)/launch/sbpl_planning.launch.xml"/>
+    <rosparam command="load" file="$(find pr2_sbpl_interface_config)/config/sbpl_planning.yaml"/>
+
+    <!-- Start Benchmark Executable -->
+    <node name="moveit_benchmark" pkg="moveit_ros_benchmarks" type="moveit_run_benchmark"
+            launch-prefix="$(arg launch_prefix)" args="$(arg cfg) --benchmark-planners" respawn="false" output="screen">
+        <rosparam command="load" file="$(find pr2_moveit_config)/config/kinematics.yaml"/>
+    </node>
+</launch>
