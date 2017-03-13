@@ -6,7 +6,7 @@ right_arm:
       graph_config: RightArmManipLatticeConfigDefault
       shortcut_config: JointSpaceShortcutConfigDefault
     larastar_bfs_manip:
-      search_config: ARAConfigDefault
+      search_config: LARAConfigDefault
       heuristic_config: BFSConfigDefault
       graph_config: RightArmManipLatticeConfigDefault
       shortcut_config: JointSpaceShortcutConfigDefault
