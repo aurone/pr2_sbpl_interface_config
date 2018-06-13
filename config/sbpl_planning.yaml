@@ -35,6 +35,7 @@ right_arm:
       heuristic_config: BFSConfigDefault
       graph_config: RightArmAdaptiveWorkspaceLatticeConfigDefault
       shortcut_config: JointSpaceShortcutConfigDefault
+
 left_arm:
   planner_configs:
     arastar_bfs_manip:
@@ -139,6 +140,7 @@ heuristic_configs:
     heuristic: joint_distance
 
 graph_configs:
+  # right_arm
   RightArmManipLatticeConfigDefault:
     graph: manip
     discretization:
@@ -161,6 +163,7 @@ graph_configs:
     graph: workspace
   RightArmAdaptiveWorkspaceLatticeConfigDefault:
     graph: adaptive_workspace_lattice
+  # right_arm_and_torso
   RightArmAndTorsoManipLatticeConfigDefault:
     graph: manip
     discretization:
@@ -180,6 +183,7 @@ graph_configs:
     rpy_snap_dist_thresh: 0.04
     xyzrpy_snap_dist_thresh: 0.2
     short_dist_mprims_thresh: 0.4
+  # left_arm
   LeftArmManipLatticeConfigDefault:
     graph: manip
     discretization:
@@ -198,6 +202,7 @@ graph_configs:
     rpy_snap_dist_thresh: 0.04
     xyzrpy_snap_dist_thresh: 0.2
     short_dist_mprims_thresh: 0.4
+  # left_arm_and_torso
   LeftArmAndTorsoManipLatticeConfigDefault:
     graph: manip
     discretization:
