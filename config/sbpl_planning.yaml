@@ -120,6 +120,7 @@ search_configs:
   ARAConfigDefault:
     search: arastar
     epsilon: 100.0
+    repair_time: 1.0
   LARAConfigDefault:
     search: larastar
     epsilon: 100.0
