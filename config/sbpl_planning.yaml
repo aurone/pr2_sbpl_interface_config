@@ -61,6 +61,11 @@ right_arm_and_torso:
       heuristic_config: BFSConfigDefault
       graph_config: RightArmAndTorsoManipLatticeConfigDefault
       shortcut_config: JointSpaceShortcutConfigDefault
+    ara_jd_ml:
+      search_config: ARAConfigDefault
+      heuristic_config: JointDistConfigDefault
+      graph_config: RightArmAndTorsoManipLatticeConfigDefault
+      shortcut_config: JointSpaceShortcutConfigDefault
     larastar_bfs_manip:
       search_config: ARAConfigDefault
       heuristic_config: BFSConfigDefault
