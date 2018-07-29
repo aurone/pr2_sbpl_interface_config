@@ -7,16 +7,12 @@
         <arg name="load_robot_description" value="true"/>
     </include>
 
-    <!-- NOTE: removed: -->
-    <!--     virtual_joint_broadcaster from odom_combined to base_footprint -->
-    <!--     joint_state_publisher -->
-    <!--     robot_state_publisher -->
-    <!-- and replaced with pr2.launch -->
+    <!-- fire up joint_state aggregator, tf, and fake odometry -->
+    <include file="$(find pr2_sbpl_interface_config)/launch/pr2.launch"/>
 
     <include file="$(find pr2_moveit_config)/launch/move_group.launch">
         <arg name="allow_trajectory_execution" value="true"/>
         <arg name="fake_execution" value="true"/>
-        <arg name="info" value="true"/>
         <arg name="debug" value="$(arg debug)"/>
     </include>
 

@@ -26,8 +26,7 @@
     <rosparam command="load" file="$(find pr2_sbpl_interface_config)/config/sbpl_planning.yaml"/>
 
     <!-- Start Benchmark Executable -->
-    <node name="moveit_benchmark" pkg="moveit_ros_benchmarks" type="moveit_run_benchmark"
-            launch-prefix="$(arg launch_prefix)" args="$(arg cfg) --benchmark-planners" respawn="false" output="screen">
+    <node name="moveit_benchmark" pkg="moveit_ros_benchmarks" type="moveit_run_benchmark" launch-prefix="$(arg launch_prefix)" args="$(arg cfg) --benchmark-planners" output="screen">
         <rosparam command="load" file="$(find pr2_moveit_config)/config/kinematics.yaml"/>
     </node>
 </launch>
