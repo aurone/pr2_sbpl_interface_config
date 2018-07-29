@@ -1,99 +1,99 @@
 right_arm:
   planner_configs:
     arastar_bfs_manip:
-      search_config: ARAConfigDefault
-      heuristic_config: BFSConfigDefault
-      graph_config: RightArmManipLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: ARAConfig
+      heuristic_config: BFSConfig
+      graph_config: RightArmManipLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
     larastar_bfs_manip:
-      search_config: LARAConfigDefault
-      heuristic_config: BFSConfigDefault
-      graph_config: RightArmManipLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: LARAConfig
+      heuristic_config: BFSConfig
+      graph_config: RightArmManipLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
     mhastar_bfs_manip:
-      search_config: ARAConfigDefault
-      heuristic_config: BFSConfigDefault
-      graph_config: RightArmManipLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: ARAConfig
+      heuristic_config: BFSConfig
+      graph_config: RightArmManipLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
     arastar_bfs_workspace:
-      search_config: ARAConfigDefault
-      heuristic_config: BFSConfigDefault
-      graph_config: RightArmWorkspaceLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: ARAConfig
+      heuristic_config: BFSConfig
+      graph_config: RightArmWorkspaceLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
     arastar_euclid_workspace:
-      search_config: ARAConfigDefault
-      heuristic_config: EuclidDistConfigDefault
-      graph_config: RightArmWorkspaceLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: ARAConfig
+      heuristic_config: EuclidDistConfig
+      graph_config: RightArmWorkspaceLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
     larastar_euclid_workspace:
-      search_config: LARAConfigDefault
-      heuristic_config: EuclidDistConfigDefault
-      graph_config: RightArmWorkspaceLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: LARAConfig
+      heuristic_config: EuclidDistConfig
+      graph_config: RightArmWorkspaceLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
     adaptive_planner:
-      search_config: AdaptivePlannerConfigDefault
-      heuristic_config: BFSConfigDefault
-      graph_config: RightArmAdaptiveWorkspaceLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: AdaptivePlannerConfig
+      heuristic_config: BFSConfig
+      graph_config: RightArmAdaptiveWorkspaceLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
 
 left_arm:
   planner_configs:
     arastar_bfs_manip:
-      search_config: ARAConfigDefault
-      heuristic_config: BFSConfigDefault
-      graph_config: LeftArmManipLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: ARAConfig
+      heuristic_config: BFSConfig
+      graph_config: LeftArmManipLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
     larastar_bfs_manip:
-      search_config: ARAConfigDefault
-      heuristic_config: BFSConfigDefault
-      graph_config: LeftArmManipLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: ARAConfig
+      heuristic_config: BFSConfig
+      graph_config: LeftArmManipLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
     mhastar_bfs_manip:
-      search_config: ARAConfigDefault
-      heuristic_config: BFSConfigDefault
-      graph_config: LeftArmManipLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: ARAConfig
+      heuristic_config: BFSConfig
+      graph_config: LeftArmManipLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
 
 right_arm_and_torso:
   planner_configs:
     arastar_bfs_manip:
-      search_config: ARAConfigDefault
-      heuristic_config: BFSConfigDefault
-      graph_config: RightArmAndTorsoManipLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: ARAConfig
+      heuristic_config: BFSConfig
+      graph_config: RightArmAndTorsoManipLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
     ara_jd_ml:
-      search_config: ARAConfigDefault
-      heuristic_config: JointDistConfigDefault
-      graph_config: RightArmAndTorsoManipLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: ARAConfig
+      heuristic_config: JointDistConfig
+      graph_config: RightArmAndTorsoManipLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
     larastar_bfs_manip:
-      search_config: ARAConfigDefault
-      heuristic_config: BFSConfigDefault
-      graph_config: RightArmAndTorsoManipLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: ARAConfig
+      heuristic_config: BFSConfig
+      graph_config: RightArmAndTorsoManipLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
     mhastar_bfs_manip:
-      search_config: ARAConfigDefault
-      heuristic_config: BFSConfigDefault
-      graph_config: RightArmAndTorsoManipLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: ARAConfig
+      heuristic_config: BFSConfig
+      graph_config: RightArmAndTorsoManipLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
 
 left_arm_and_torso:
   planner_configs:
     arastar_bfs_manip:
-      search_config: ARAConfigDefault
-      heuristic_config: BFSConfigDefault
-      graph_config: LeftArmAndTorsoManipLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: ARAConfig
+      heuristic_config: BFSConfig
+      graph_config: LeftArmAndTorsoManipLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
     larastar_bfs_manip:
-      search_config: ARAConfigDefault
-      heuristic_config: BFSConfigDefault
-      graph_config: LeftArmAndTorsoManipLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: ARAConfig
+      heuristic_config: BFSConfig
+      graph_config: LeftArmAndTorsoManipLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
     mhastar_bfs_manip:
-      search_config: ARAConfigDefault
-      heuristic_config: BFSConfigDefault
-      graph_config: LeftArmAndTorsoManipLatticeConfigDefault
-      shortcut_config: JointSpaceShortcutConfigDefault
+      search_config: ARAConfig
+      heuristic_config: BFSConfig
+      graph_config: LeftArmAndTorsoManipLatticeConfig
+      shortcut_config: JointSpaceShortcutConfig
 
 #arms:
 #  planner_configs: {}
@@ -117,37 +117,37 @@ left_arm_and_torso:
 #  planner_configs: {}
 
 search_configs:
-  ARAConfigDefault:
+  ARAConfig:
     search: arastar
     epsilon: 100.0
     repair_time: 1.0
-  LARAConfigDefault:
+  LARAConfig:
     search: larastar
     epsilon: 100.0
-  MHAConfigDefault:
+  MHAConfig:
     search: mhastar
     epsilon: 10.0
     mha_epsilon: 10.0
-  AdaptivePlannerConfigDefault:
+  AdaptivePlannerConfig:
     search: padastar
     epsilon_plan: 100.0
     epsilon_track: 100.0
 
 heuristic_configs:
-  BFSConfigDefault:
+  BFSConfig:
     heuristic: bfs
     bfs_res_x: 0.015
     bfs_res_y: 0.015
     bfs_res_z: 0.015
     bfs_sphere_radius: 0.02
-  EuclidDistConfigDefault:
+  EuclidDistConfig:
     heuristic: euclid
-  JointDistConfigDefault:
+  JointDistConfig:
     heuristic: joint_distance
 
 graph_configs:
   # right_arm
-  RightArmManipLatticeConfigDefault:
+  RightArmManipLatticeConfig:
     graph: manip
     discretization:
       r_shoulder_pan_joint:   0.017453292519943
@@ -165,12 +165,19 @@ graph_configs:
     rpy_snap_dist_thresh: 0.04
     xyzrpy_snap_dist_thresh: 0.2
     short_dist_mprims_thresh: 0.4
-  RightArmWorkspaceLatticeConfigDefault:
+  RightArmWorkspaceLatticeConfig:
     graph: workspace
-  RightArmAdaptiveWorkspaceLatticeConfigDefault:
+    discretization:
+        fk_pos_x: 0.02
+        fk_pos_y: 0.02
+        fk_pos_z: 0.02
+        fk_rot_r: 0.017453292519943
+        fk_rot_p: 0.017453292519943
+        fk_rot_y: 0.017453292519943
+  RightArmAdaptiveWorkspaceLatticeConfig:
     graph: adaptive_workspace_lattice
   # right_arm_and_torso
-  RightArmAndTorsoManipLatticeConfigDefault:
+  RightArmAndTorsoManipLatticeConfig:
     graph: manip
     discretization:
       torso_lift_joint:       0.02
@@ -190,7 +197,7 @@ graph_configs:
     xyzrpy_snap_dist_thresh: 0.2
     short_dist_mprims_thresh: 0.4
   # left_arm
-  LeftArmManipLatticeConfigDefault:
+  LeftArmManipLatticeConfig:
     graph: manip
     discretization:
       l_shoulder_pan_joint:   0.017453292519943
@@ -209,7 +216,7 @@ graph_configs:
     xyzrpy_snap_dist_thresh: 0.2
     short_dist_mprims_thresh: 0.4
   # left_arm_and_torso
-  LeftArmAndTorsoManipLatticeConfigDefault:
+  LeftArmAndTorsoManipLatticeConfig:
     graph: manip
     discretization:
       torso_lift_joint:       0.02
@@ -230,7 +237,7 @@ graph_configs:
     short_dist_mprims_thresh: 0.4
 
 shortcut_configs:
-  JointSpaceShortcutConfigDefault:
+  JointSpaceShortcutConfig:
     shortcutter: joint_space
     shortcut_path: true
     interpolate_path: true
